@@ -15,7 +15,7 @@ const Home = () => {
   }, [dispatch]);
 
   if(isLoading){
-   <h1>Loading...</h1>
+   return <h1>Loading...</h1>
   }
   const activeClass = "text-white bg-indigo-500 border-white";
 

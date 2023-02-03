@@ -15,6 +15,9 @@ const Navbar = () => {
           <Link to='/top-rated'>Top Rated</Link>
         </li>
         <li>
+          <Link to='/dashboard'>Dashboard</Link>
+        </li>
+        <li>
           <Link to='/about'>About</Link>
         </li>
         <li title='Wishlist' className='bg-indigo-500 p-2 rounded-full'>
