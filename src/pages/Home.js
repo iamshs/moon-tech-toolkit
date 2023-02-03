@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../components/ProductCard";
 import { toggle, toggleBrands } from "../features/filter/filterSlice";
@@ -11,12 +11,14 @@ const Home = () => {
   const {products , isLoading} = useSelector((state) => state.products)
   const {stock , brands} = filter
   useEffect(() => {
-    // fetch("http://localhost:5000/products")
-    //   .then((res) => res.json())
-    //   .then((data) => setProducts(data));
     dispatch(getProducts())
-  }, []);
+  }, [dispatch]);
+
+  if(isLoading){
+   <h1>Loading...</h1>
+  }
   const activeClass = "text-white bg-indigo-500 border-white";
+
   let content;
 
   if (products.length) {
